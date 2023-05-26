@@ -25,14 +25,20 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Main Layout */}
         <Route path='/' element={<Layout />}>
+          {/* Home page */}
           <Route index element={<Home />} />
+
+          {/* Agency pages */}
           <Route
             path='photography-agency'
             element={<PhotographyAgencyHome />}
           />
           <Route path='digital-agency' element={<DigitalAgencyHome />} />
           <Route path='marketing-agency' element={<MarketingAgencyHome />} />
+
+          {/* Other pages */}
           <Route path='about' element={<AboutPage />} />
           <Route path='service' element={<ServicesPage />} />
           <Route
@@ -55,10 +61,13 @@ function App() {
           />
           <Route path='faq' element={<FaqPage />} />
         </Route>
+
+        {/* Alternative Layout */}
         <Route
           path='/'
           element={<Layout headerVariant='cs-site_header_full_width' />}
         >
+          {/* Alternative home pages */}
           <Route
             path='creative-portfolio'
             element={<CreativePortfolioHome />}
@@ -72,6 +81,8 @@ function App() {
             element={<CaseStudyShowcaseHome />}
           />
         </Route>
+
+        {/* 404 Error page */}
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </>
